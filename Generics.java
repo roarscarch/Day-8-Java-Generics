@@ -12,29 +12,18 @@
  */
 
 public class Generics {
-    public static int getMaxInt(int a, int b, int c) {
-        if (a > b && a > c) return a;
-        else if (b > a && b > c) return b;
-        else return c;
-    }
-
-    public static float getMaxFloat(float a, float b, float c) {
-        if (a > b && a > c) return a;
-        else if (b > a && b > c) return b;
-        else return c;
-    }
-
-     public static String getMaxString(String a, String b, String c) {
+    public static <T extends Comparable<T>> T getMax(T a, T b, T c) {
         if (a.compareTo(b) > 0 && a.compareTo(c) > 0) return a;
         else if (b.compareTo(a) > 0 && b.compareTo(c) > 0) return b;
         else return c;
     }
 
+
     public static void main(String[] args) {
         System.out.println("Welcome to Generics Min-Max program.");
 
-        System.out.println(getMaxString("orange", "banana", "apple"));
-        System.out.println(getMaxString("dog", "elephant", "cat"));
-        System.out.println(getMaxString("java", "javascript", "python"));
+        System.out.println(getMax("orange", "banana", "apple"));
+        System.out.println(getMax("dog", "elephant", "cat"));
+        System.out.println(getMax("java", "javascript", "python"));
     }
 }
