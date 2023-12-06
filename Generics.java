@@ -11,19 +11,40 @@
  * 
  */
 
-public class Generics {
-    public static <T extends Comparable<T>> T getMax(T a, T b, T c) {
+public class Generics<T extends Comparable<T>> {
+    private T var1;
+    private T var2;
+    private T var3;
+
+    public Generics(T var1, T var2, T var3) {
+        this.var1 = var1;
+        this.var2 = var2;
+        this.var3 = var3;
+    }
+
+    public T findMaximum() {
+        return Generics.findMaximum(var1, var2, var3);
+    }
+
+    public static <T extends Comparable<T>> T findMaximum(T a, T b, T c) {
         if (a.compareTo(b) > 0 && a.compareTo(c) > 0) return a;
         else if (b.compareTo(a) > 0 && b.compareTo(c) > 0) return b;
         else return c;
     }
 
-
     public static void main(String[] args) {
         System.out.println("Welcome to Generics Min-Max program.");
 
-        System.out.println(getMax("orange", "banana", "apple"));
-        System.out.println(getMax("dog", "elephant", "cat"));
-        System.out.println(getMax("java", "javascript", "python"));
+       
+        Generics<Integer> intMax = new Generics<>(10, 5, 8);
+        System.out.println("Maximum Integer: " + intMax.findMaximum());
+
+        
+        Generics<Double> doubleMax = new Generics<>(23.5, 12.3, 15.7);
+        System.out.println("Maximum Double: " + doubleMax.findMaximum());
+
+        
+        Generics<String> stringMax = new Generics<>("apple", "banana", "orange");
+        System.out.println("Maximum String: " + stringMax.findMaximum());
     }
 }
