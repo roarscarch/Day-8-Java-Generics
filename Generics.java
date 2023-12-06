@@ -8,10 +8,10 @@ public class Generics {
         System.out.println("Welcome to Generics Min-Max program.");
 
        
-        System.out.println(getMaxInt(23, 43, 1));
-        System.out.println(getMaxInt(99, 35, 42));
-        System.out.println(getMaxInt(33, 81, 89));
-        System.out.println(getMaxInt(45, -1, 29));
+        System.out.println(getMaxInt(233, 43, 1));
+        System.out.println(getMaxInt(99, 355, 42));
+        System.out.println(getMaxInt(33, 81, 9999));
+       
       
 
     }
